@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import HomePage from "./pages/HomePage/HomePage";
 import Login from "./pages/Login/Login";
@@ -8,7 +8,7 @@ import NoMatch from "./pages/NoMatch/NoMatch";
 import ProductList from "./components/Products/ProductList/ProductList";
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <Header />
       <Routes>
         <Route index element={<HomePage />}></Route>
@@ -17,7 +17,7 @@ function App() {
         <Route path="/kid" element={<ProductList />}></Route>
         <Route path="*" element={<NoMatch />} />
       </Routes>
-    </>
+    </BrowserRouter>
   );
 }
 

@@ -50,9 +50,9 @@ const Header = () => {
       <UserButton>
         <ShoppingCartOutlined style={iconStyle} />
 
-        <UserOutlined style={iconStyle} />
-
         <HeartOutlined style={iconStyle} />
+
+        <UserOutlined style={iconStyle} />
       </UserButton>
     </HeaderMain>
   );
