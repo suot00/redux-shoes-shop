@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import ProductList from "../../components/Products/ProductList/index";
 import Footer from "../../components/Footer";
 import AboutPage from "../../components/AboutPage";
+import Service from "../../components/Service/index";
 // import axios from "axios";
 const HomePage = () => {
   const [products, setProducts] = useState([]);
@@ -25,9 +26,26 @@ const HomePage = () => {
   return (
     <>
       <AboutPage />
-      {products.map((product, index) => (
-        <ProductList key={index} data={product} />
-      ))}
+      <div style={{ margin: "3em" }}>
+        <h2
+          style={{
+            fontSize: "24px",
+            fontWeight: "bold",
+            lineHeight: "32px",
+            marginBottom: "1em",
+            marginLeft: "1em",
+          }}
+        >
+          All the new arrivals
+        </h2>
+        <div style={{ display: "flex", width: "100%" }}>
+          {products.map((product, index) => (
+            <ProductList key={index} data={product} />
+          ))}
+        </div>
+        <p>View all new arrivals</p>
+      </div>
+      <Service />
       <Footer />
     </>
   );

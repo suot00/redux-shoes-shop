@@ -3,9 +3,8 @@ import styled from "styled-components";
 const AboutMain = styled.div`
   width: 100%;
   display: flex;
-  padding: 2em;
+  padding: 3em;
   background: linear-gradient(90deg, #fdfbfb 0%, #ebedee 100%);
-  border: 1px solid #000000;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 const AboutLeft = styled.div`
@@ -66,8 +65,9 @@ const AboutBottom = styled.div`
   height: 128px;
   background: #ffffff;
   box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.08);
-  margin-top: -5em;
+  margin-top: -3em;
   margin-left: 15.5em;
+  margin-bottom: 3em;
   display: flex;
   align-items: center;
   justify-content: center;

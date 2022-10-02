@@ -3,8 +3,8 @@ import {
   ProductContainer,
   CardProduct,
   ImageProduct,
-} from "../../../assets/style/styleProduct/index.js";
-const ProductList = (data) => {
+} from "../../assets/style/styleProduct/index";
+const Products = (data) => {
   return (
     <>
       <ProductContainer>
@@ -30,4 +30,4 @@ const ProductList = (data) => {
   );
 };
 
-export default ProductList;
+export default Products;

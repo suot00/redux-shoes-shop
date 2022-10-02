@@ -55,7 +55,16 @@ const AboutPage = () => {
           src={Item3}
           alt=""
         />
-        <span style={{ width: "131px", height: "48px" }}>
+        <span
+          style={{
+            width: "131px",
+            height: "48px",
+            fontSize: "16px",
+            lineHeight: "24px",
+            marginRight: "2em",
+            marginLeft: "2em",
+          }}
+        >
           Find that sneaker you want
         </span>
         <img src={NextIcon} alt="" />

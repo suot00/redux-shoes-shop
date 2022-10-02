@@ -5,18 +5,21 @@ import HomePage from "./pages/HomePage/index";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import NoMatch from "./pages/NoMatch/index";
-import ProductList from "./components/Products/ProductList/index";
+import ProductDetail from "./components/Products/ProductDetail/index";
+import "antd/dist/antd.css";
 function App() {
   return (
     <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route index element={<HomePage />}></Route>
-        {/* <Route path="/men" element={<ProductList />}></Route> */}
-        {/* <Route path="/women" element={<ProductList />}></Route>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route index element={<HomePage />}></Route>
+          <Route path="/men" element={<ProductDetail />}></Route>
+          {/* <Route path="/women" element={<ProductList />}></Route>
         <Route path="/kid" element={<ProductList />}></Route> */}
-        <Route path="*" element={<NoMatch />} />
-      </Routes>
+          <Route path="*" element={<NoMatch />} />
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 }
