@@ -5,8 +5,8 @@ const ProductContainer = styled.div`
 `;
 
 const CardProduct = styled.div`
-  width: 310px;
-  height: 414px;
+  width: 20em;
+  height: 23em;
 `;
 const ImageProduct = styled.div`
   width: 310px;

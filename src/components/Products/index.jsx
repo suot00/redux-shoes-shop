@@ -1,32 +1,49 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   ProductContainer,
   CardProduct,
   ImageProduct,
 } from "../../assets/style/styleProduct/index";
-const Products = (data) => {
+import { Col, Row, Button } from "antd";
+const Products = () => {
   return (
-    <>
-      <ProductContainer>
-        <CardProduct>
-          <ImageProduct>
-            <img src={data.data.imgUrl} alt="" />
-          </ImageProduct>
-          <h3
-            style={{
-              fontSize: "18px",
-              fontWeight: "bold",
-              lineHeight: "26px",
-              margin: "10px 0 10px 0",
-            }}
-          >
-            {" "}
-            {data.data.name}
-          </h3>
-          <p>{data.data.price}RWF</p>
-        </CardProduct>
-      </ProductContainer>
-    </>
+    <div style={{ display: "flex", width: "100%" }}>
+      <div style={{ width: "30%", backgroundColor: "pink" }}>
+        <h2>Brand</h2>
+        <h2>Size</h2>
+        <Row style={{ marginTop: "1em" }}>
+          <Col span={3}>
+            <Button>35</Button>
+          </Col>
+          <Col span={3}>
+            <Button>36</Button>
+          </Col>
+          <Col span={3}>
+            <Button>37</Button>
+          </Col>
+          <Col span={3}>
+            <Button>38</Button>
+          </Col>
+        </Row>
+        <Row style={{ marginTop: "1em" }}>
+          <Col span={3}>
+            <Button>40</Button>
+          </Col>
+          <Col span={3}>
+            <Button>41</Button>
+          </Col>
+          <Col span={3}>
+            <Button>42</Button>
+          </Col>
+          <Col span={3}>
+            <Button>43</Button>
+          </Col>
+        </Row>
+      </div>
+      <div style={{ width: "70%", backgroundColor: "cyan" }}>
+        <h2>The new arrivals</h2>
+      </div>
+    </div>
   );
 };
 

@@ -4,9 +4,10 @@ import Header from "./components/Header/index";
 import HomePage from "./pages/HomePage/index";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Products from "./components/Products/index";
 import NoMatch from "./pages/NoMatch/index";
 import ProductDetail from "./components/Products/ProductDetail/index";
-import "antd/dist/antd.css";
+import "antd/dist/antd.min.css";
 function App() {
   return (
     <BrowserRouter>
@@ -15,8 +16,8 @@ function App() {
         <Routes>
           <Route index element={<HomePage />}></Route>
           <Route path="/men" element={<ProductDetail />}></Route>
-          {/* <Route path="/women" element={<ProductList />}></Route>
-        <Route path="/kid" element={<ProductList />}></Route> */}
+          <Route path="/women" element={<Products />}></Route>
+          {/* <Route path="/kid" element={<ProductList />}></Route>  */}
           <Route path="*" element={<NoMatch />} />
         </Routes>
       </div>

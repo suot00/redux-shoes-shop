@@ -1,33 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import ProductList from "../../components/Products/ProductList/index";
 import Footer from "../../components/Footer";
 import AboutPage from "../../components/AboutPage";
 import Service from "../../components/Service/index";
 // import axios from "axios";
+
 const HomePage = () => {
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    async function getProducts() {
-      const response = await fetch("/api/products", {
-        method: "GET",
-        headers: {
-          accept: "application/json",
-        },
-      });
+  // const [products, setProducts] = useState([]);
+  // useEffect(() => {
+  //   async function getProducts() {
+  //     const response = await fetch("/api/products", {
+  //       method: "GET",
+  //       headers: {
+  //         accept: "application/json",
+  //       },
+  //     });
 
-      const data = await response.json();
+  //     const data = await response.json();
 
-      setProducts(data.products);
-    }
+  //     setProducts(data.products);
+  //   }
 
-    getProducts();
-  }, []);
+  //   getProducts();
+  // }, []);
 
   return (
     <>
       <AboutPage />
-      <div style={{ margin: "3em" }}>
-        <h2
+      <div>
+        {/* <h2
           style={{
             fontSize: "24px",
             fontWeight: "bold",
@@ -37,13 +38,16 @@ const HomePage = () => {
           }}
         >
           All the new arrivals
-        </h2>
-        <div style={{ display: "flex", width: "100%" }}>
+        </h2> */}
+        {/* <div style={{ display: "flex" }}>
           {products.map((product, index) => (
             <ProductList key={index} data={product} />
           ))}
-        </div>
-        <p>View all new arrivals</p>
+        </div> */}
+        <ProductList />
+        {/* <p style={{ display: "flex", justifyContent: "flex-end" }}>
+          View all new arrivals
+        </p> */}
       </div>
       <Service />
       <Footer />
