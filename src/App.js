@@ -18,6 +18,10 @@ function App() {
           <Route path="/men" element={<ProductDetail />}></Route>
           <Route path="/women" element={<Products />}></Route>
           {/* <Route path="/kid" element={<ProductList />}></Route>  */}
+          <Route
+            path="/products/:productId"
+            element={<ProductDetail />}
+          ></Route>
           <Route path="*" element={<NoMatch />} />
         </Routes>
       </div>

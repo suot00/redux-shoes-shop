@@ -1,28 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
   ProductContainer,
   CardProduct,
   ImageProduct,
 } from "../../../assets/style/styleProduct/index.js";
-import { useDispatch, useSelector } from "react-redux";
-import { getProducts } from "../../../redux/actions/productAction";
-const ProductList = () => {
-  const dispatch = useDispatch();
-  const productsListData = useSelector((state) => state.productsList);
-  const { loading, error, products } = productsListData;
-  useEffect(() => {
-    dispatch(getProducts());
-  }, [dispatch]);
+import { Link } from "react-router-dom";
+const ProductList = (data) => {
   return (
     <>
-      <>
-        {loading
-          ? "Loading..."
-          : error
-          ? error.message
-          : products.map((p) => <h3>{p.name}</h3>)}
-      </>
-      {/* <ProductContainer>
+      <ProductContainer>
         <CardProduct>
           <ImageProduct>
             <img src={data.data.imgUrl} alt="" />
@@ -35,12 +21,11 @@ const ProductList = () => {
               margin: "10px 0 10px 0",
             }}
           >
-            {" "}
-            {data.data.name}
+            <Link to={`/products/${data.data.id}`}> {data.data.name}</Link>
           </h3>
           <p>{data.data.price}RWF</p>
         </CardProduct>
-      </ProductContainer> */}
+      </ProductContainer>
     </>
   );
 };

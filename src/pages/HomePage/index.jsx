@@ -1,34 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ProductList from "../../components/Products/ProductList/index";
 import Footer from "../../components/Footer";
 import AboutPage from "../../components/AboutPage";
 import Service from "../../components/Service/index";
-// import axios from "axios";
+import axios from "axios";
 
 const HomePage = () => {
-  // const [products, setProducts] = useState([]);
-  // useEffect(() => {
-  //   async function getProducts() {
-  //     const response = await fetch("/api/products", {
-  //       method: "GET",
-  //       headers: {
-  //         accept: "application/json",
-  //       },
-  //     });
+  const [products, setProducts] = useState([]);
+  async function fetchData() {
+    let response = await axios(`http://localhost:3000/api/products`);
+    let productData = await response.data.products;
+    setProducts(productData);
+  }
 
-  //     const data = await response.json();
-
-  //     setProducts(data.products);
-  //   }
-
-  //   getProducts();
-  // }, []);
-
+  useEffect(() => {
+    fetchData();
+  }, []);
   return (
     <>
       <AboutPage />
       <div>
-        {/* <h2
+        <h2
           style={{
             fontSize: "24px",
             fontWeight: "bold",
@@ -38,18 +30,25 @@ const HomePage = () => {
           }}
         >
           All the new arrivals
-        </h2> */}
-        {/* <div style={{ display: "flex" }}>
+        </h2>
+        <div style={{ display: "flex" }}>
           {products.map((product, index) => (
             <ProductList key={index} data={product} />
           ))}
-        </div> */}
-        <ProductList />
-        {/* <p style={{ display: "flex", justifyContent: "flex-end" }}>
-          View all new arrivals
-        </p> */}
+        </div>
+
+        <p
+          style={{
+            display: "flex",
+            justifyContent: "flex-end",
+            paddingTop: "4em",
+            paddingRight: "5em",
+          }}
+        >
+          <a href="#">View all new arrivals</a>
+        </p>
       </div>
-      <Service />
+      {/* <Service /> */}
       <Footer />
     </>
   );
