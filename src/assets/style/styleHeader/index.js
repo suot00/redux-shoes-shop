@@ -25,6 +25,7 @@ const ItemList = styled.div`
 const UserButton = styled.div`
   height: 50px;
   padding: 10px 20px;
+  position: relative;
 `;
 
 export { HeaderMain, HeaderContainer, ItemList, Logo, UserButton };

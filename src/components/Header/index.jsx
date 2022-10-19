@@ -13,7 +13,8 @@ import {
   ItemList,
 } from "../../assets/style/styleHeader/index.js";
 import { Link } from "react-router-dom";
-const Header = () => {
+import { Button } from "antd";
+const Header = ({ countCartItems }) => {
   const linkStyle = {
     color: "black",
   };
@@ -23,11 +24,13 @@ const Header = () => {
   return (
     <HeaderMain>
       <Logo>
-        <img src={LOGO} alt="logo" style={{ cursor: "pointer" }} />
+        <Link to="/">
+          <img src={LOGO} alt="logo" style={{ cursor: "pointer" }} />
+        </Link>
       </Logo>
       <HeaderContainer style={{ display: "flex" }}>
         <ItemList>
-          <Link style={linkStyle} to="/">
+          <Link style={linkStyle} to="/newArrivals">
             New Arrivals
           </Link>
         </ItemList>
@@ -48,7 +51,30 @@ const Header = () => {
         </ItemList>
       </HeaderContainer>
       <UserButton>
-        <ShoppingCartOutlined style={iconStyle} />
+        <Link style={linkStyle} to="/shoppingCart">
+          <ShoppingCartOutlined style={iconStyle} />
+          {countCartItems ? (
+            <span
+              style={{
+                position: "absolute",
+                top: "10px",
+                left: "40px",
+                width: "15px",
+                height: "15px",
+                borderRadius: "50%",
+                backgroundColor: "red",
+                padding: "3px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              {countCartItems}
+            </span>
+          ) : (
+            ""
+          )}
+        </Link>
 
         <HeartOutlined style={iconStyle} />
 

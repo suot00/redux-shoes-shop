@@ -1,21 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import ProductList from "../../components/Products/ProductList/index";
-import Footer from "../../components/Footer";
+
 import AboutPage from "../../components/AboutPage";
 import Service from "../../components/Service/index";
-import axios from "axios";
+import { Link } from "react-router-dom";
 
-const HomePage = () => {
-  const [products, setProducts] = useState([]);
-  async function fetchData() {
-    let response = await axios(`http://localhost:3000/api/products`);
-    let productData = await response.data.products;
-    setProducts(productData);
-  }
-
-  useEffect(() => {
-    fetchData();
-  }, []);
+const HomePage = ({ products }) => {
   return (
     <>
       <AboutPage />
@@ -32,8 +22,8 @@ const HomePage = () => {
           All the new arrivals
         </h2>
         <div style={{ display: "flex" }}>
-          {products.map((product, index) => (
-            <ProductList key={index} data={product} />
+          {products.map((product) => (
+            <ProductList key={product.id} product={product} />
           ))}
         </div>
 
@@ -45,11 +35,10 @@ const HomePage = () => {
             paddingRight: "5em",
           }}
         >
-          <a href="#">View all new arrivals</a>
+          <Link to="/newArrivals">View all new arrivals</Link>
         </p>
       </div>
       {/* <Service /> */}
-      <Footer />
     </>
   );
 };

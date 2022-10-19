@@ -5,13 +5,14 @@ import {
   ImageProduct,
 } from "../../../assets/style/styleProduct/index.js";
 import { Link } from "react-router-dom";
-const ProductList = (data) => {
+const ProductList = ({ product }) => {
+  console.log(product);
   return (
     <>
       <ProductContainer>
         <CardProduct>
           <ImageProduct>
-            <img src={data.data.imgUrl} alt="" />
+            <img src={product.imgUrl} alt="" />
           </ImageProduct>
           <h3
             style={{
@@ -21,9 +22,9 @@ const ProductList = (data) => {
               margin: "10px 0 10px 0",
             }}
           >
-            <Link to={`/products/${data.data.id}`}> {data.data.name}</Link>
+            <Link to={`/products/${product.id}`}> {product.name}</Link>
           </h3>
-          <p>{data.data.price}RWF</p>
+          <p>{product.price}RWF</p>
         </CardProduct>
       </ProductContainer>
     </>
