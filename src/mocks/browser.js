@@ -11,13 +11,15 @@ const worker = setupWorker(
             price: 35000,
             imgUrl: require("../assets/img/Rectangle 19.png"),
             categories: "men",
+            size: "35",
           },
           {
             id: "2",
             name: "Nike Zoom",
             price: 35000,
             imgUrl: require("../assets/img/Rectangle 25.png"),
-            categories: "men",
+            categories: "women",
+            size: "36",
           },
           {
             id: "3",
@@ -25,13 +27,15 @@ const worker = setupWorker(
             price: 35000,
             imgUrl: require("../assets/img/Rectangle 24.png"),
             categories: "men",
+            size: "37",
           },
           {
             id: "4",
             name: "Nike Wobbler",
             price: 35000,
             imgUrl: require("../assets/img/Rectangle 26.png"),
-            categories: "men",
+            categories: "women",
+            size: "38",
           },
         ],
       })
